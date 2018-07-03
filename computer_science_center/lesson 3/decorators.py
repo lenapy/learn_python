@@ -116,3 +116,37 @@ def trace_v7(func, handle):
 @trace_v7(sys.stderr)
 def identity(x):
 	return x
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+def trace_v8(func=None, *, handle=sys.stdout):
+	if func is None:
+		return lambda func: trace_v8(func, handle=None)
+
+	@functools.wraps(func)
+	def inner(*args, **kwargs):
+		print(func.__name__, args, kwargs)
+		return func(*args, **kwargs)
+	return inner
+
+#-----------------------------------------------------------------------------------------------------------------------
+import time
+
+def timethis(func=None, *, n_iter=100):
+	if func is None:
+		return lambda func: timethis(func, n_iter=n_iter)
+
+	@functools.wraps(func)
+	def inner(*args, **kwargs):
+		print(func.__name__, end=".....")
+		acc = float("inf")
+		result = None
+		for i in range(n_iter):
+			tick = time.perf_counter()
+			result = func(*args, **kwargs)
+			acc = min(acc, time.perf_counter() - tick)
+		print(acc)
+		return result
+	return inner
+
+result = timethis()(range(10 ** 6))
