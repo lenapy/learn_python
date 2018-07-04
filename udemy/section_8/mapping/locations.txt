@@ -1,0 +1,5 @@
+LOCATION,LAT,LON
+Kyiv Ukraine,50.45466,30.5238
+Odesa Ukraine,46.469391,30.740883
+Dnipro Ukraine,48.45, 34.98333
+Ladyzhyn Ukraine,48.41, 29.14
