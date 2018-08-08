@@ -4,7 +4,7 @@ from datetime import datetime as dt
 hosts_path = r'C:\Windows\System32\drivers\etc\hosts'
 hosts_temp = 'hosts'
 redirect = '127.0.0.1'
-website_list = ['www.facebook.com', 'facebook.com', 'www.youtube.com', 'youtube.com']
+website_list = ['www.facebook.com', 'facebook.com']
 
 while True:
 	if dt(dt.now().year, dt.now().month, dt.now().day, 11) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 18):

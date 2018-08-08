@@ -1,0 +1,41 @@
+Virtualenv:
+
+1. python -m venv virtual;
+2. check latest version of python - virtual\Scripts\python;
+3. to exit ^Z
+4. install flask - virtual\Scripts\pip install flask
+5. run flask app - virtual\Scripts\python flask_app\script1.py
+_______________________________________________________________
+Deploy on Heroku:
+
+1. https://dashboard.heroku.com/apps
+2. Create an app:
+    2.1 download heroku toolbelt
+        https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+    2.2 open command window in directory ../udemy/section_10/flask_app:
+        1. heroku login
+        2. heroku create helen-learn-flask
+            https://helen-learn-flask.herokuapp.com/ | https://git.heroku.com/helen-learn-flask.git
+        3. to list your apps use command heroku apps
+        4. ..\virtual\scripts\pip install gunicorn
+        4. ..\virtual\scripts\pip freeze > requirements.txt
+        5. create Procfile with line 'web: gunicorn script1:app', where gunicorn is http server,
+         script1 which runs flask app, app is name of variable that holding flask instance (app = Flask(__name__))
+        6. create runtime.txt should contain python version to running app
+        7. create git: git init  for initialization
+        8. git add .
+        9. git commit -m "first commit"
+        10. heroku git:remote --app helen-learn-flask
+        11. git push heroku master (if problems run git config --global user.email "<email>"
+                                                    git config --global user.name "<name>")
+        12. you can get info about ypur app, run heroku info
+
+After you change files:
+
+1. heroku login
+2. heroku info, if you have no info, you should specify your app -> heroku git:remote --app <app name>
+3. git add .
+4. git commit -m "message"
+5. git push heroku master
+
+heroku logs to see logs

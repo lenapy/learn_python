@@ -106,3 +106,4 @@ venv.bak/
 .idea/
 .venv/
 udemy/config.py
+udemy/section_10/virtual/
