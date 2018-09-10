@@ -1,0 +1,25 @@
+CLASS - you can call it a prototype that defines the characteristics of an object that is about to be created
+
+OBJECT INSTANCE - object that stores data
+
+INSTANCE VARIABLE - variable that is defined inside the method of the class
+
+CLASS VARIABLE - a class variable declared outside of the methods of the class, and class variables are shared by all
+the instance of a class, so instance variables are shared by only the object instance
+
+DOC STRINGS - provides the explanation of class in closed 3 quotes """ """, you can get it by calling __doc__ method
+
+DATA MEMBER - concept of data members is referred to class variables or instance variables
+
+CONSTRUCTOR which is __init__ function, constructor constructs your class
+
+CLASS METHODS - applies to object instance
+
+INSTANTIATION - process of creating instances
+
+INHERITANCE - is when you create a subclass out of a base class, and this subclass shares the methods of the base class
+plus it has its own methods that are specific to that subclass.
+
+ATTRIBUTES - when you access instance variables, or even, class variables, you can say you're accessing attributes of
+class instance of object
+
